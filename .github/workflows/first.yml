@@ -1,0 +1,15 @@
+name: Shell Commands # il nome di tutto il workflow
+
+on: [push ] #definisce gli eventi entro cui si applicano le configurazioni
+
+jobs:
+ run-shell-comand:  #il nome del job
+  run-on: ubuntu-latest  # il sistema oeprativo dove gira
+  steps: 
+   - name: echo a string
+     run:  echo "Hello Word"
+   - name: multi line screapt
+     run: | # il pipe è utilizzato per poter lanciare più comandi contemporaneamente
+       node -v 
+       npm- v 
+   
