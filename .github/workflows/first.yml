@@ -10,6 +10,6 @@ jobs:
      run:  echo "Hello Word"
    - name: multi line screapt
      run: | # il pipe è utilizzato per poter lanciare più comandi contemporaneamente
-       node -v 
-       npm- v 
+       docker -v 
+     
    
