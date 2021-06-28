@@ -16,6 +16,12 @@ jobs:
       import platform 
       print(platform.processor())
      shell: python # specifca la shell con cui viene lanciato il  comando di deafolt è bash  
-
+ run-windos-comand: 
+  runs-on: windos-latest  
+  steps:
+   - name: directory Power Shell
+     run: Get-Location
+   - name: direcotory  bash
+     run:
      
    
