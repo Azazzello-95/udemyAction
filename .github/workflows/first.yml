@@ -11,5 +11,11 @@ jobs:
    - name: multi line screapt
      run: | # il pipe è utilizzato per poter lanciare più comandi contemporaneamente
        docker -v 
+   - name: python Commands
+     run:  |
+      import platform 
+      print(platform.processor())
+    shell: python # specifca la shell con cui viene lanciato il  comando di deafolt è bash  
+
      
    
