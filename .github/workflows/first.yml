@@ -22,7 +22,7 @@ jobs:
    - name: directory Power Shell
      run: Get-Location
    - name: direcotory  bash
-     run: pdw 
+     run: pwd 
      shell: bash
      
    
