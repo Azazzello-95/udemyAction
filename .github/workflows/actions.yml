@@ -10,7 +10,7 @@ jobs:
       id: greet
       uses: actions/hello-world-javascript-action@V1 # questa è un action importtata da esterno , queste informazioni le prendiamo dal url prima della chiocciola
                                                     # la chiocciola è la versione
-      whit:     # è una parola chiave per gli input che andranno nel azione
+      with:     # è una parola chiave per gli input che andranno nel azione
        who-to-greet:  John 
     - name: Log Greeting Time  
       run: echo "${{steps.greet.outputs.time}}" #questa è una variabile che contiene l' output dello steap soapra. output specifica che ci si riferisce a un
