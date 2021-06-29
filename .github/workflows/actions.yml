@@ -8,7 +8,7 @@ jobs:
   steps:
     - name: List file
       run: |
-        pdw
+        pwd
         ls
     - name: Simple JS Action
       id: greet
