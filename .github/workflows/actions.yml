@@ -8,7 +8,7 @@ jobs:
   steps:
     - name: Simple JS Action
       id: greet
-      uses: actions/hello-world-javascript-action@V1 # questa è un action importtata da esterno , queste informazioni le prendiamo dal url prima della chiocciola
+      uses: actions/hello-world-javascript-action@v1 # questa è un action importtata da esterno , queste informazioni le prendiamo dal url prima della chiocciola
                                                     # la chiocciola è la versione
       with:     # è una parola chiave per gli input che andranno nel azione
        who-to-greet:  John 
