@@ -1,14 +1,23 @@
 name: Action workflow
 
 on:
-  repository_dispatch:
-   types: [build]
+  push:
+  #  branches-ingore: # stabilisce su quali rami far girare le richieste
+    branches: #stabilice su quali rami attivare le azioni
+    - master 
+    - 'feature/*' # l'asterisco è come il like di sql
+    tags:
+    - v1.*
+    paths:
+      - "**.js"
+  # repository_dispatch:
+  # types: [build]
   #schedule:
   # - cron: "0/5 * * * * " 
   # - cron: "0/6 * * * * "
   #push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  #pull_request:
+  #  types: [closed, assigned, opened, reopened]
 
 
 jobs:
