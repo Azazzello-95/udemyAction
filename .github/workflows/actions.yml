@@ -5,7 +5,7 @@ on: [push]
 jobs:
  run-github-actions:
   runs-on: ubunto-lastest
-   steps:
+  steps:
     - name: Simple JS Action
       id: greet
       uses: actions/hello-world-javascript-action@V1 # questa è un action importtata da esterno , queste informazioni le prendiamo dal url prima della chiocciola
