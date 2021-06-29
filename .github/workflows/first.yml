@@ -18,6 +18,7 @@ jobs:
      shell: python # specifca la shell con cui viene lanciato il  comando di deafolt è bash  
  run-windos-comand: 
   runs-on: windows-latest  
+  needs:["run-shell-comand"]
   steps:
    - name: directory Power Shell
      run: Get-Location
