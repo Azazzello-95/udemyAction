@@ -7,9 +7,16 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: List file
+     # quelle col dollaro sono tutte variabili di ambiente utili pre settate che si rifanno a delle specifice sdi git hib
       run: |
         pwd
         ls
+        echo $GITHUB_SHA
+        echo $GITHUB_REPOSITORY
+        echo $GITHUB_WORKSPACE   
+        echo "${{github.token}}"
+        git clone git@hub:$GITHUB_REPOSITORY
+        git checkout $GITHUB_SHA
     - name: Checkout
       uses: actions/checkout@v1
     - name: List file after
