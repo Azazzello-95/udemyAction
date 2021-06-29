@@ -1,0 +1,17 @@
+name: Action workflow
+
+on: [push]
+
+jobs:
+ run-github-actions:
+  runs-on: ubunto-lastest
+   steps:
+    - name: Simple JS Action
+      id: greet
+      uses: actions/hello-world-javascript-action@V1 # questa è un action importtata da esterno , queste informazioni le prendiamo dal url prima della chiocciola
+                                                    # la chiocciola è la versione
+     whit:     # è una parola chiave per gli input che andranno nel azione
+      who-to-greet:   John 
+    - name: Log Greeting Time  
+      run: echo "${{steps.greet.outputs.time}}" #questa è una variabile che contiene l' output dello steap soapra. output specifica che ci si riferisce a un
+                                                # output mentre time  è relativo al azione specifica
