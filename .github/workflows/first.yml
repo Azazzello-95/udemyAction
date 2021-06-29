@@ -7,7 +7,7 @@ jobs:
   runs-on: ubuntu-latest  # il sistema oeprativo dove gira
   steps: 
    - name: echo a string
-     run:  echo "Hello Word"
+     run:  echo "Hello Word!"
    - name: multi line screapt
      run: | # il pipe è utilizzato per poter lanciare più comandi contemporaneamente
        docker -v 
