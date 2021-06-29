@@ -1,6 +1,6 @@
 name: first  # il nome di tutto il workflow
 
-on: [push ] #definisce gli eventi entro cui si applicano le configurazioni
+on: [pull_request ] #definisce gli eventi entro cui si applicano le configurazioni
 
 jobs:
  run-shell-comand:  #il nome del job
