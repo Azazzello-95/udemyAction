@@ -6,6 +6,10 @@ jobs:
  run-github-actions:
   runs-on: ubuntu-latest
   steps:
+    - name: List file
+      run: |
+        pdw
+        ls
     - name: Simple JS Action
       id: greet
       uses: actions/hello-world-javascript-action@v1 # questa è un action importtata da esterno , queste informazioni le prendiamo dal url prima della chiocciola
