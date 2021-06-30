@@ -1,9 +1,15 @@
 on: push
 name: Context 
 jobs:
-  one:
+  functions:
     runs-on: ubuntu-latest
     steps:
+      - name: dump
+        run : |
+         echo ${{contains('hello', 'll')}}
+         echo ${{startsWith('hello', he)}}
+         echo ${{endWith('hello',lo)}}
+         echo ${{format ('Hello {0} {1} {2}','World','!','!') }}
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
