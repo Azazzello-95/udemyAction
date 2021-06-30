@@ -1,4 +1,4 @@
-on: push
+on: [push, pull_request]
 name: Context 
 jobs:
   functions:
@@ -10,15 +10,21 @@ jobs:
          echo ${{startsWith('hello', 'he')}}
          echo ${{endsWith('hello','lo')}}
          echo ${{format ('Hello {0} {1} {2}','World','!','!') }}
+  one:  
+     runs-on: ubuntu-latest
+     if: github.event_name =='push'
+     steps:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
       - name: Dump job context
+        if: failure() #questo comando fa in modo di lanciare lo steap  se quello sopra fallisse
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
         run: echo "$JOB_CONTEXT"
       - name: Dump steps context
+        if: always() # fa in modo che lo step venga lanciato sempre
         env:
           STEPS_CONTEXT: ${{ toJSON(steps) }}
         run: echo "$STEPS_CONTEXT"
