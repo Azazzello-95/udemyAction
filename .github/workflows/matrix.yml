@@ -5,10 +5,19 @@ on: push
 jobs:
   node-version:
     runs-on: ${{matrix.os}}
+    env:
+     IS_UBUNTU_8: ${{matrix.is_ubuntu_8}}
     strategy:
      matrix:
        os: [macos-latest, ubuntu-latest, windows-latest ]
        node_version: [6,8,10]
+       include:
+        - os: ubuntu-latest
+          node_version: 4 
+          is_ubuntu_8: "true"
+       exclude:
+        - os: ubuntu-latest
+          node_version: 6
      max-parallel: 3    # stabilisce il numero massimo di job che possono andare in parallelo
      fail-fast: true
     steps:
@@ -18,4 +27,8 @@ jobs:
       with:
        node-version: ${{matrix.node_version}}
     - name: Log node version again 
-      run: node -v    
+      run: |
+       node -v
+       echo $IS_UBUNTU_8
+        
+  
