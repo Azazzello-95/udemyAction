@@ -10,7 +10,7 @@ jobs:
    - name: log node version
      run: |
       node -v 
-      cat /etc/os-relase
+      cat /etc/os-relese
 
    
 
