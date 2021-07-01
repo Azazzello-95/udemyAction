@@ -2,6 +2,18 @@ name: container
 on: push 
 
 jobs: 
+  doker-steaps:
+   runs-on: ubuntu-latest
+   container: 
+    image: node:10.18.0-jessie
+   steps:
+    - name: log node version
+      run: node -v
+    - name: Steap whit doker 
+      uses: docker://node;12.14.1-alpine3.10
+      with:
+       entrypoint: '/bin/echo'
+       args: 'Hello Word'        
   node-doker:
    runs-on: ubuntu-latest
    services:
