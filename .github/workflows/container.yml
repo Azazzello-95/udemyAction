@@ -13,6 +13,7 @@ jobs:
     - name: save paht for node
       run: |
        echo  " PHAT_NODE= $(type -a node) " >>  $GITHUB_ENV 
+       echo $PHAT_NODE 
     - name: Steap whit doker 
       uses: docker://node:12.14.1-alpine3.10
       with:
