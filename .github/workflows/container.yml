@@ -9,14 +9,10 @@ jobs:
    steps:
     - name: log node version
       run: node -v    
-    - name: save paht for node
-      run: |
-        echo "node_phat= $(type -a node) " >>  $GITHUB_ENV 
-          echo "${{env.node_phat}}" 
     - name: Steap whit doker 
       uses: docker://node:12.14.1-alpine3.10
       with:
-       entrypoint: "${{env.node_phat}}"     ##'/bin/echo'
+       entrypoint: '/bin/echo'
        args: -v         
   node-doker:
    runs-on: ubuntu-latest
